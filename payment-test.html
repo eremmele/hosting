@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pay Now</title>
+    <style>
+      body {
+        margin: 0;
+        background: #f8f8f8;
+        font-family: "Rund Display Bold", sans-serif;
+      }
+
+      iframe {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background: white;
+      }
+
+      /* Optional: hide elements inside iframe using JavaScript if same-origin or CORS allows */
+    </style>
+  </head>
+  <body>
+    <iframe
+      id="payment-frame"
+      src="https://payment.ipospays.com/api/v2/merchantPay?t=YOUR_VALID_TOKEN_HERE"
+    ></iframe>
+
+    <!-- Optionally manipulate the iframe content if you own the domain -->
+    <script>
+      // For same-origin pages or if CORS + postMessage is supported
+      const iframe = document.getElementById("payment-frame");
+
+      // Listen for postMessage from iPOS iframe if they support it
+      window.addEventListener("message", (event) => {
+        console.log("Received message from iframe:", event.data);
+        // Example: apply logic based on message content
+      });
+    </script>
+  </body>
+</html>
