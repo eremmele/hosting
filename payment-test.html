@@ -29,25 +29,30 @@
   .card-footer,
   .footer-shadow,
   .sticky-footer {
-    box-shadow: none           !important;   /* Firefox / modern */
-    -webkit-box-shadow: none   !important;   /* old WebKit       */
-    filter: none               !important;   /* drop-shadow()    */
+    box-shadow: none !important; /* Firefox / modern */
+    -webkit-box-shadow: none !important; /* old WebKit */
+    filter: none !important; /* drop-shadow() */
   }
 
   /* 2 — OPTIONAL: turn shadows white instead of removing */
-  /*
   .payment-container,
   .hpp-wrapper { 
     box-shadow: 0 0 0 9999px #fff inset !important; 
   }
-  */
 
   /* 3 — OPTIONAL: remove borders / outlines that might replace the shadow */
   .card, .payment-container {
-    border: none   !important;
-    outline: none  !important;
-    background: transparent !important;   /* keep the embed seamless */
+    border: none !important;
+    outline: none !important;
+    background: transparent !important; /* keep the embed seamless */
   }
+
+      .shadow {
+        box-shadow: none !important;
+      }
+      .card {
+        border: 5px solid rgba(0,0,0,1) !important;
+      }
     </style>
 
   </head>
