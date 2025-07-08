@@ -14,24 +14,42 @@
         width: 100vw;
         height: 100vh;
         border: none;
-        position: fixed;
+        /*position: fixed;*/
         top: 0;
         left: 0;
         z-index: 1000;
         background: white;
       }
+        /* 1 — kill every form shadow */
+  .payment-container,
+  .hpp-wrapper,
+  .card,
+  .card-header,
+  .card-body,
+  .card-footer,
+  .footer-shadow,
+  .sticky-footer {
+    box-shadow: none           !important;   /* Firefox / modern */
+    -webkit-box-shadow: none   !important;   /* old WebKit       */
+    filter: none               !important;   /* drop-shadow()    */
+  }
 
-      #shadow-mask {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100vw;
-        height: 40px; /* tweak this to fully hide shadow */
-        background: white;
-        z-index: 1001;
-        pointer-events: none;
-      }
+  /* 2 — OPTIONAL: turn shadows white instead of removing */
+  /*
+  .payment-container,
+  .hpp-wrapper { 
+    box-shadow: 0 0 0 9999px #fff inset !important; 
+  }
+  */
+
+  /* 3 — OPTIONAL: remove borders / outlines that might replace the shadow */
+  .card, .payment-container {
+    border: none   !important;
+    outline: none  !important;
+    background: transparent !important;   /* keep the embed seamless */
+  }
     </style>
+
   </head>
   <body>
     <iframe
